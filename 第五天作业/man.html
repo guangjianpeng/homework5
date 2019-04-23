@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/*躯干部分*/
+		.box{
+			display: block;
+			position: relative;
+			margin-top: 30px;
+			margin-left: 50%;
+		}
+		@-webkit-keyframes run{
+			0%{-webkit-transform: rotate(5deg) translate(5px,0px);}
+			25%{-webkit-transform: rotate(5deg) translate(-5px,-14px);}
+			50%{-webkit-transform: rotate(5deg) translate(5px,0px);}
+			75%{-webkit-transform: rotate(5deg) translate(-5px,-14px);}
+			100%{-webkit-transform: rotate(5deg) translate(5px,0px);}
+		}
+		.man{
+			width: 86px;
+			height: 274px;
+			background-image: url(img/torso.png);
+			-webkit-animation: run 5s 0s linear infinite;
+		}
+		/*右手部分*/
+		.right{
+			position: absolute;
+			width: 51px;
+			height: 124px;
+			top:90px;
+			left: 8px;
+			-webkit-transform-origin: 20px 5px;
+			-webkit-animation: right-bicep 1s 0s linear infinite;
+		}
+		.right img{
+			float: left;
+		}
+		.right img:last-child{
+			position: absolute;
+			top:105px;
+			left:30px;
+			-webkit-transform: rotate(-20deg);
+		}
+		@-webkit-keyframes right-bicep{
+			0%{-webkit-transform: rotate(26deg) ;}
+			50%{-webkit-transform: rotate(-20deg) ;}
+			100%{-webkit-transform: rotate(26deg) ;}
+		}
+		/*左手部分*/
+		.left{
+			position: absolute;
+			width: 51px;
+			height: 124px;
+			top:90px;
+			left: 8px;
+			-webkit-transform-origin: 20px 5px;
+			-webkit-animation: left-bicep 1s 0s linear infinite;
+			z-index: -999;
+		}
+		.left img{
+			float: left;
+		}
+		.left img:last-child{
+			position: absolute;
+			top:105px;
+			left:30px;
+			-webkit-transform: rotate(-20deg);
+		}
+		@-webkit-keyframes left-bicep{
+			0%{-webkit-transform: rotate(-20deg) ;}
+			50%{-webkit-transform: rotate(26deg) ;}
+			100%{-webkit-transform: rotate(-20deg) ;}
+		}
+		/*右腿*/
+		@-webkit-keyframes left-t{
+			0%{-webkit-transform: rotate(-30deg) ;}
+			50%{-webkit-transform: rotate(5deg) ;}
+			100%{-webkit-transform: rotate(-30deg) ;}
+		}
+		.bottom-left{
+			position: absolute;
+			width: 69px;
+			height: 144px;
+			-webkit-transform-origin: 35px 0px;
+			-webkit-animation: left-t 1s 0s linear infinite;
+			top:230px;
+			left: 0px;
+			z-index: -10;
+		}
+		div img{
+			position: absolute;
+            float: left;
+		}
+		.left-1{
+			position: absolute;
+			top:120px;
+			z-index: -50;
+			left: 5px;
+			-webkit-transform-origin: 26px 0px;
+			-webkit-animation: left-11 1s 0s linear infinite;
+		}
+		@-webkit-keyframes left-11{
+			0%{-webkit-transform: rotate(90deg) ;}
+			50%{-webkit-transform: rotate(-20deg) ;}
+			100%{-webkit-transform: rotate(90deg) ;}
+		}
+		
+		.left-2{
+			position: absolute;
+			top:155px;
+			left: 0px;
+			-webkit-transform-origin: 26px 0px;
+			-webkit-animation: left-12 1s 0s linear infinite;
+		}
+		.left-3{
+			position: absolute;
+			display: block;
+			left: 5px;
+			top:0px
+		}
+		.left-3 img:last-child{
+			position: absolute;
+			left: 65px;
+			top:10px
+		}
+		@-webkit-keyframes left-12{
+			0%{-webkit-transform: rotate(15deg) ;}
+			50%{-webkit-transform: rotate(-10deg) ;}
+			100%{-webkit-transform: rotate(15deg) ;}
+		}
+		
+		/*右腿*/
+		@-webkit-keyframes right-t{
+			0%{-webkit-transform: rotate(5deg) ;}
+			50%{-webkit-transform: rotate(-30deg) ;}
+			100%{-webkit-transform: rotate(5deg) ;}
+		}
+		.bottom-right{
+			position: absolute;
+			width: 69px;
+			height: 144px;
+			-webkit-transform-origin: 35px 0px;
+			-webkit-animation: right-t 1s 0s linear infinite;
+			top:230px;
+			left: 0px;
+			z-index: -10;
+		}
+		
+		.right-1{
+			position: absolute;
+			top:120px;
+			z-index: -50;
+			left: 5px;
+			-webkit-transform-origin: 26px 0px;
+			-webkit-animation: right-11 1s 0s linear infinite;
+		}
+		@-webkit-keyframes right-11{
+			0%{-webkit-transform: rotate(-20deg) ;}
+			50%{-webkit-transform: rotate(90deg) ;}
+			100%{-webkit-transform: rotate(-20deg) ;}
+		}
+		
+		.right-2{
+			position: absolute;
+			top:155px;
+			left: 0px;
+			-webkit-transform-origin: 26px 0px;
+			-webkit-animation: right-12 1s 0s linear infinite;
+		}
+		.right-3{
+			position: absolute;
+			display: block;
+			left: 5px;
+			top:0px
+		}
+		.right-3 img:last-child{
+			position: absolute;
+			left: 65px;
+			top:10px
+		}
+		@-webkit-keyframes right-12{
+			0%{-webkit-transform: rotate(-10deg) ;}
+			50%{-webkit-transform: rotate(15deg) ;}
+			100%{-webkit-transform: rotate(-10deg) ;}
+		}
+		
+	</style>
+	<body>
+		<div class="box">
+			<div class="man"></div>
+			<div class="right">
+				<img src="img/right-bicep.png">
+				<img src="img/right-forearm.png"/>
+			</div>
+			
+			
+			<div class="left">
+				<img src="img/left-bicep.png" />
+				<img src="img/left-forearm.png" />
+			</div>
+			
+			
+			<div class="bottom-left">
+				<img src="img/left-thigh.png" />
+				<div class="left-1">
+						<img src="img/shin.png" /> 
+					<div class="left-2">
+					    
+					   <div class="left-3">
+					   	<img src="img/foot.png" />
+					   	<img src="img/toes.png" />
+					   </div> 
+				    </div>
+				</div>
+			</div>
+			
+			
+			<div class="bottom-right">
+				<img src="img/left-thigh.png" />
+				<div class="right-1">
+						<img src="img/shin.png" /> 
+					<div class="right-2">
+					    
+					   <div class="right-3">
+					   	<img src="img/foot.png" />
+					   	<img src="img/toes.png" />
+					   </div> 
+				    </div>
+				</div>
+			</div>
+			
+			
+			
+			
+		</div>
+	</body>
+</html>
+<!--/**
+ * 
+ *	手 	：右手臂（26 ~ -20  ~ 26 ) ，  右小手臂（-10 ~ -45  ~ -10）
+ *		：左手臂（-20 ~ 26  ~ -20 )，左小手臂（-45 ~ -10  ~ -45）
+ * 
+ *  腿	：左大腿（10 ~ -45 ~ 10 ）    左小腿( 20 85 30 20 20 )  左脚：（ -16 ~ -10 ~ -5 ~ -7 ~ -16）左脚尖： （ -10 -25 0 -10 -10）
+ *  	：右大腿（-45 ~ 10 ~ -45 ）  右小腿( 30 20 20 85 30 )  右脚：（ -5 ~ -7 ~ -16 ~ -10 ~ -5） 右脚尖： （0 -10 -10 -25 0）
+ * 
+ * 躯干部分：
+ * { -webkit-transform:   rotate(5deg) translate( 5px,   0px); }
+ * { -webkit-transform:  rotate(5deg) translate(-5px, -14px); }
+ * { -webkit-transform:  rotate(5deg) translate( 5px,   0px); }
+ * { -webkit-transform:  rotate(5deg) translate(-5px, -14px); }
+ * { -webkit-transform: rotate(5deg) translate( 5px,   0px); }
+ *
+ ***/-->
